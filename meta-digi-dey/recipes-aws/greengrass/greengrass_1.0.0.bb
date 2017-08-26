@@ -93,7 +93,7 @@ python() {
 
 S = "${WORKDIR}/${BPN}"
 
-inherit aws-iot update-rc.d useradd pypi setuptools
+inherit aws-iot update-rc.d useradd
 
 GG_USESYSTEMD = "${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'yes', 'no', d)}"
 
@@ -198,4 +198,4 @@ USERADD_PARAM_${PN} = "-r -M -N -g ggc_group -s /bin/false ggc_user"
 #
 INSANE_SKIP_${PN} += "already-stripped ldflags"
 
-RDEPENDS_${PN} += "ca-certificates python-argparse python-json python-numbers sqlite3 python-modules python-distribute"
+RDEPENDS_${PN} += "ca-certificates python-argparse python-json python-numbers sqlite3 python-pip"
