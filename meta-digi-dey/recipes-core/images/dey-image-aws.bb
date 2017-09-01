@@ -23,6 +23,9 @@ IMAGE_FEATURES += " \
     ${@bb.utils.contains('MACHINE_FEATURES', 'wifi', 'dey-wireless', '', d)} \
 "
 
+# Add RPi Sense Hat packages
+IMAGE_INSTALL_append = " python-evdev python-sense-hat"
+
 IMAGE_LINGUAS = ""
 
 inherit core-image

@@ -12,6 +12,9 @@ IMAGE_FEATURES += " \
     ${@bb.utils.contains('MACHINE_FEATURES', 'wifi', 'dey-wireless', '', d)} \
 "
 
+# Add RPi Sense Hat packages
+IMAGE_INSTALL_append = " python-evdev python-sense-hat"
+
 # SDK features (for toolchains generated from an image with populate_sdk)
 SDKIMAGE_FEATURES ?= "dev-pkgs dbg-pkgs staticdev-pkgs"
 
